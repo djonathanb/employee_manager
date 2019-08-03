@@ -16,5 +16,8 @@ class Employee(models.Model):
     email = models.CharField(max_length=64)
     department = models.ForeignKey(Department, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.id} - {self.name}"
+
     class Meta:
         db_table = 'employee'

@@ -9,3 +9,12 @@ class Department(models.Model):
 
     class Meta:
         db_table = 'department'
+
+
+class Employee(models.Model):
+    name = models.CharField(max_length=64)
+    email = models.CharField(max_length=64)
+    department = models.ForeignKey(Department, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'employee'

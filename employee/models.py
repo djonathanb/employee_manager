@@ -13,7 +13,7 @@ class Department(models.Model):
 
 class Employee(models.Model):
     name = models.CharField(max_length=64)
-    email = models.CharField(max_length=64)
+    email = models.EmailField(max_length=64)
     department = models.ForeignKey(Department, on_delete=models.PROTECT)
 
     def __str__(self):
